@@ -9,7 +9,7 @@ export class HomeComponent implements OnInit {
   user: string;
 
   constructor() {
-    this.user = "Usuario Predeterminado"; // Cambia "Usuario Predeterminado" por el valor que necesites
+    this.user = "Usuario"; // Cambia "Usuario Predeterminado" por el valor que necesites
   }
 
   ngOnInit() {

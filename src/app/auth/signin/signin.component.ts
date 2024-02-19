@@ -1,4 +1,4 @@
-import { AuthService } from './../../service/auth.service';
+import { AuthService } from '../../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-signin',
+  selector: 'app-signin', // Asegúrate de que esto coincida con lo que usas en la plantilla
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })

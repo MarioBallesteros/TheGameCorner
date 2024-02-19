@@ -1,12 +1,25 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- Bootstrap CDN Link -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+<!-- Fontawesome CDN Link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Custom CSS Link -->
+<link rel="stylesheet" href="../../css/style.css" />
+<!-- efecto retro -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<!-- Bootstrap CDN Link -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
 
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <span style="font-size:1.5em;color:white; margin-right:6px;"><i class="fas fa-home"></i></span>
-  <a class="navbar-brand" routerLink="/index">Rental App</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" routerLink="/index">The Game Corner</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item  ">
@@ -33,4 +46,107 @@
 </nav>
 <br>
 <h2>&nbsp;&nbsp;&nbsp;Welcome {{user}}!</h2>
-<router-outlet></router-outlet>
+
+<section id="publishers" class="publishers-service-sec pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="section-header text-center">
+        <h2 class="fw-bold fs-1 retro-text">
+          Nuestros
+          <span class="text-primary">Mejores </span>Juegos
+        </h2>
+
+        <p class="sec-icon"><i class="fa-solid fa-shopping-cart"></i></p>
+      </div>
+    </div>
+    <div class="row mt-5 mt-md-4 row-cols-1 row-cols-sm-1 row-cols-md-3 justify-content-center">
+      <div class="col">
+        <div class="service-card">
+          <a class="referencia">
+            <div class="icon-wrapper">
+              <img class="fa-solid imagenCard" src="" alt="imagen">
+            </div>
+            <br>
+            <h6 class="productType">Eléctronica</h6>
+            <h6 class="productName">Portátil gaming Acer Nitro V 15 </h6>
+            <p>
+              Este nuevo portátil Acer Nitro V 15, equipado con Windows 11, mejora su rendimiento gracias a la
+              disponibilidad de hasta 32 GB de memoria DRR5. </p>
+          </a>
+        </div>
+      </div>
+      <div class="col">
+        <div class="service-card">
+          <div class="icon-wrapper">
+            <img class="fa-solid imagenCard" src="" alt="imagen">
+          </div>
+          <br>
+          <h6 class="productType">Ciclismo</h6>
+          <h6 class="productName">Bicicleta Carretera R140 Carbon</h6>
+          <p>
+            Modelo R140 con cuadro de carbono, pensado para ciclistas con buena técnica que busquen la mejor
+            precisión en su recorrido.
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="service-card">
+          <div class="icon-wrapper">
+            <img class="fa-solid imagenCard" src="" alt="imagen">
+          </div>
+          <br>
+          <h6 class="productType">Imagen</h6>
+          <h6 class="productName">Cámara Bridge Nikon Coolpix P500</h6>
+          <p>
+            Esta es una de las cámaras con mejor luminosidad en su categoría, incluso con los ajustes de zoom más
+            largos; una gran ventaja en la fotografía deportiva.
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="service-card">
+          <div class="icon-wrapper">
+            <img class="fa-solid imagenCard" src="" alt="imagen">
+          </div>
+          <br>
+          <h6 class="productType">Running</h6>
+          <h6 class="productName">Zapatillas de Running AirMax Pro </h6>
+          <p>
+            Diseñadas para brindar comodidad y soporte durante carreras largas. La tecnología AirMax proporciona
+            amortiguación superior y transpirabilidad. </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="service-card">
+          <div class="icon-wrapper">
+            <img class="fa-solid imagenCard" src="" alt="imagen">
+          </div>
+          <br>
+          <h6 class="productType">Eléctronica</h6>
+          <h6 class="productName">Smartphone Galaxy Z Fold 3 </h6>
+          <p>
+            Última generación de smartphones plegables con pantalla AMOLED, cámara avanzada y funciones multitarea
+            mejoradas para una experiencia única. </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="service-card">
+          <div class="icon-wrapper">
+            <img class="fa-solid imagenCard" src="" alt="imagen">
+          </div>
+          <br>
+          <h6 class="productType">Cocina</h6>
+          <h6 class="productName">Batidora de Mano KitchenAid </h6>
+          <p>
+            La batidora de mano KitchenAid es un electrodoméstico versátil que facilita la preparación de mezclas y
+            alimentos. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+

@@ -1,4 +1,149 @@
-/* You can add global styles to this file, and also import other style files */
-body{
-  background: #f85d20ce;
+/* Estilo retro para el texto */
+.retro-text {
+  font-family: 'Press Start 2P', cursive;
+  color: #ffcc00;
+  text-shadow: 3px 3px 0px #000, 6px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo retro para el fondo y el navbar */
+.bg-dark {
+  background-color: #000 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffcc00;
+  text-shadow: 2px 2px 0px #000;
+}
+
+/* Estilos para las tarjetas */
+.service-card {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #ffcc00;
+  box-shadow: 0 0 10px #ffcc00;
+}
+
+.service-card .productType, .service-card .productName {
+  color: #33ccff;
+}
+
+/* Ajustes adicionales para complementar el estilo retro existente */
+
+/* Personalización del navbar-toggler para dispositivos móviles */
+.navbar-toggler {
+  border-color: #ffcc00;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffcc00' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Estilo para los botones del formulario de búsqueda */
+.btn-outline-success {
+  color: #ffcc00;
+  border-color: #ffcc00;
+}
+.btn-outline-success:hover {
+  color: #000;
+  background-color: #ffcc00;
+}
+
+/* Estilo para enlaces activos y hover en el navbar */
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #33ccff;
+}
+
+/* Estilos para el formulario de búsqueda */
+.form-inline .form-control {
+  background-color: #222;
+  color: #ffcc00;
+  border-color: #ffcc00;
+}
+.form-inline .form-control:focus {
+  background-color: #333;
+  color: #ffcc00;
+  border-color: #ffcc00;
+}
+.form-inline .btn {
+  color: #ffcc00;
+  background-color: #222;
+  border-color: #ffcc00;
+}
+
+/* Estilo para el pie de página si es necesario */
+.footer {
+  background-color: #000;
+  color: #ffcc00;
+  text-align: center;
+  padding: 20px 0;
+}
+
+
+/* Estilo retro general con ajustes para mejorar la elegancia */
+body, html {
+  background-color: #101010; /* Fondo más oscuro para mayor contraste */
+  color: #fcfcfc; /* Color de texto claro para mejorar la legibilidad */
+}
+
+/* Mejora del navbar con un toque más elegante */
+.navbar-dark.bg-dark {
+  border-bottom: 2px solid #ffcc00; /* Añade un borde inferior dorado */
+  padding: 0.5rem 1rem; /* Ajusta el padding para un look más definido */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffcc00 !important; /* Asegura que el color dorado se aplique */
+  text-shadow: 1px 1px 2px #000; /* Sombra más sutil para los enlaces */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  text-shadow: 2px 2px 3px #000; /* Sombra para el título principal */
+}
+
+/* Ajustes para los íconos de FontAwesome dentro del navbar */
+.fas.fa-home {
+  color: #33ccff; /* Color azul claro para un contraste agradable */
+}
+
+/* Estilos de las tarjetas con mejoras para un look retro */
+.service-card {
+  background-color: #181818; /* Fondo más oscuro para las tarjetas */
+  color: #fcfcfc;
+  border-color: #ffcc00; /* Borde dorado */
+  transition: transform 0.2s; /* Transición suave al hacer hover */
+}
+
+.service-card:hover {
+  transform: scale(1.05); /* Efecto de zoom al hacer hover */
+  box-shadow: 0 0 20px #ffcc00; /* Sombra más prominente al hacer hover */
+}
+
+/* Texto y títulos con estilo retro mejorado */
+.retro-text, .service-card .productType, .service-card .productName {
+  text-shadow: 2px 2px 4px #000; /* Sombra más profunda para destacar el texto */
+}
+
+/* Botón de búsqueda con estilo acorde al tema */
+.btn-outline-success {
+  color: #ffcc00;
+  border-color: #ffcc00;
+  background-color: transparent;
+}
+
+.btn-outline-success:hover {
+  color: #101010;
+  background-color: #ffcc00;
+}
+
+/* Mejoras adicionales para inputs de búsqueda */
+.form-inline .form-control {
+  background-color: #222;
+  border-color: #ffcc00;
+  color: #ffcc00;
+}
+
+.form-inline .form-control:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 8px #ffcc00; /* Resalta el input activo */
 }
