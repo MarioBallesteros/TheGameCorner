@@ -1,69 +1,62 @@
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+
+interface Rental {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  locality: string;
+  image: string;
+  createdOn?: Date;
+}
 
 @Injectable({
-  providedIn: 'root' //provided service at the root available for any classes
+  providedIn: 'root'
 })
 export class RentalserviceService {
+  private rentals: Rental[] = [
+    {
+      id: '1',
+      title: 'Juego de Mesa Clásico',
+      description: 'Un emocionante juego de mesa para disfrutar con amigos.',
+      price: 20,
+      locality: 'Ciudad Central',
+      image: 'url-a-la-imagen',
+      createdOn: new Date()
+    },
+    // Más objetos de tipo Rental...
+  ];
 
-  constructor(private db:AngularFirestore) { }
+  constructor() { }
 
-  addRental(rental){
-    let createdOn = new Date()
-    // let ownernum = this.authService.userDetails.pno
-    // let ownername = this.authService.userDetails.name
-    // this.updateService.originalForm(rental)
-    return this.db.collection('rentals').add({createdOn,...rental})
+  addRental(rental: Omit<Rental, 'id' | 'createdOn'>): Observable<Rental> {
+    const newRental: Rental = {
+      ...rental,
+      id: Math.random().toString(36).substring(2),
+      createdOn: new Date()
+    };
+    this.rentals.push(newRental);
+    return of(newRental);
   }
 
-  updateRental(rental,id){
-    // console.log(rental)
-    var docRef = this.db.collection("rentals").doc(id);
-
-    let updatedOn = new Date()
-    return docRef.update({
-        createdOn:updatedOn,
-        description:rental.description,
-        image:rental.image,
-        locality:rental.locality,
-        price:rental.price,
-        title:rental.title,
-      })
-      .then(function() {
-          console.log("Document successfully updated!");
-      })
-      .catch(function(error) {
-          console.error("Error updating document: ", error);
-      });
+  updateRental(rental: Partial<Rental>, id: string): Observable<void> {
+    const index = this.rentals.findIndex(r => r.id === id);
+    if (index !== -1) {
+     // this.rentals[index] = { ...this.rentals[index], ...rental, updatedOn: new Date() };
+    }
+    return of(void 0);
   }
 
-  getAllRentals(){
-    return this.db.collection('rentals').snapshotChanges().pipe(
-      map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as any;
-        const id = a.payload.doc.id;
-        return { id, ...data };
-      }))
-    );
+  getAllRentals(): Observable<Rental[]> {
+    return of(this.rentals);
   }
 
-  getOrderedRentals(by){
-    return  this.db.collection('rentals',ref=>ref.orderBy('price',by)).snapshotChanges().pipe(
-      map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as any;
-        const id = a.payload.doc.id;
-        return { id, ...data };
-      }))
-    );
+  getOrderedRentals(by: 'asc' | 'desc'): Observable<Rental[]> {
+    return of(this.rentals.sort((a, b) => by === 'asc' ? a.price - b.price : b.price - a.price));
   }
-  getByLocality(searchkey){
-    return this.db.collection('rentals',ref=>ref.where('locality','==',searchkey)).snapshotChanges().pipe(
-       map(actions => actions.map(a => {
-         const data = a.payload.doc.data() as any;
-         const id = a.payload.doc.id;
-         return { id, ...data };
-       }))
-     );
-   }
+
+  getByLocality(searchkey: string): Observable<Rental[]> {
+    return of(this.rentals.filter(r => r.locality === searchkey));
+  }
 }

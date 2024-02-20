@@ -3,8 +3,41 @@
   position: fixed;
   top:19%;
 }
-h2{
-  background:rgba(4, 4, 41, 0.562);
-  color:white;
-  width: fit-content;
+.retro-form h2, .retro-form form, .retro-form a, .retro-form p {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+.retro-form .form-control {
+  background-color: #000;
+  border: 1px solid #ffcc00;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.retro-form .form-control::placeholder {
+  color: #ffcc00;
+}
+
+.retro-form .form-text {
+  color: #ffcc00;
+}
+
+.retro-form .btn-primary {
+  background-color: #000;
+  border-color: #ffcc00;
+  color: #ffcc00;
+}
+
+.retro-form .btn-primary:hover {
+  background-color: #ffcc00;
+  color: #000;
+}
+
+.retro-form a {
+  color: #ffcc00;
+}
+
+.retro-form a:hover {
+  text-decoration: underline;
 }

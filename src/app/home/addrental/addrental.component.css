@@ -1,0 +1,40 @@
+/* Importa una fuente pixelada para el efecto retro */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.container {
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* Estiliza el formulario con un fondo y bordes que recuerden a los estilos retro */
+.form-group label {
+  color: #00ff00; /* Un verde brillante para los textos */
+}
+
+.form-control {
+  background-color: #000;
+  border: 1px solid #00ff00;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Botón con estilo retro */
+.btn-primary {
+  background-color: #0000ff;
+  border: 1px solid #ff00ff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #ff00ff;
+  border-color: #0000ff;
+}
+
+/* Cambia el color del enlace para que se adapte al estilo retro */
+a {
+  color: #00ffff;
+}
+
+/* Mensajes de ayuda y advertencias con estilo retro */
+.form-text {
+  color: #ff69b4;
+}

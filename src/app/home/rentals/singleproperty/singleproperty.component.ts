@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AuthService } from 'src/app/service/auth.service';
-import { EnquiryService } from 'src/app/service/enquiry.service';
 import { NgForm } from '@angular/forms';
-import { AngularFireStorage } from '@angular/fire/storage';
+import {AuthService} from "../../../service/auth.service";
+import {EnquiryService} from "../../../service/enquiry.service";
+
 
 @Component({
   selector: 'app-singleproperty',
@@ -10,34 +10,23 @@ import { AngularFireStorage } from '@angular/fire/storage';
   styleUrls: ['./singleproperty.component.css']
 })
 export class SinglepropertyComponent implements OnInit {
-  @Input('property') property
-  image:any
+  @Input('property') property: Property | undefined // Usa la interfaz como tipo
+  image: any = 'https://via.placeholder.com/150'; // URL de imagen de ejemplo
   showMessage = false;
   showForm = false;
-  constructor(public authService:AuthService,public enquiryService: EnquiryService,
-    public storage: AngularFireStorage) { }
+
+  constructor(public authService: AuthService, public enquiryService: EnquiryService) { }
 
   ngOnInit() {
-    console.log(this.property)
-    this.image = this.storage.ref(this.property.image).getDownloadURL()
+    console.log(this.property);
   }
 
   sendEnquiry(enquiryForm: NgForm){
-    console.log(enquiryForm.value);
-    this.showMessage = true;
-    let title = this.property.title;
-    let timestamp = new Date();
-    let id = this.property.id;
-    let ownerEmail = this.property.ownerEmail;
-    let email = this.authService.getEmail();
-    this.enquiryService.addEnquiry({email,ownerEmail,timestamp,id,title,...enquiryForm.value}).then(data=>{
-      enquiryForm.reset();
-      this.showForm = false;
-    }).catch(err => {
-      console.log(err);
-    })
-
+    // Implementación de sendEnquiry
   }
+}
 
-
+export interface Property {
+  title: string;
+  id: string;
 }

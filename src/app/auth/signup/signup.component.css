@@ -8,3 +8,45 @@ h2{
   color:white;
   width: fit-content;
 }
+
+/* Continúa usando la fuente pixelada para mantener la coherencia del estilo */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.container {
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* Ajusta el estilo de los labels y inputs para seguir el estilo retro */
+.form-group label {
+  color: #ff00ff; /* Un color rosa para contrastar con el fondo oscuro */
+}
+
+.form-control {
+  background-color: #222; /* Un fondo más oscuro para los inputs */
+  border: 2px solid #00ff00; /* Un borde verde neón */
+  color: #00ff00; /* Texto en verde neón para que resalte */
+  margin-bottom: 10px; /* Espaciado entre elementos del formulario */
+}
+
+/* Botón con estilo retro, similar al ejemplo anterior */
+.btn-primary {
+  background-color: #000;
+  border: 2px solid #ff00ff;
+  color: #ff00ff;
+}
+
+.btn-primary:hover {
+  background-color: #ff00ff;
+  color: #000;
+}
+
+/* Enlaces con estilo retro */
+a {
+  color: #00ffff; /* Un azul claro para los enlaces */
+}
+
+/* Pequeños textos de ayuda con estilo acorde */
+.form-text {
+  color: #ff69b4; /* Un rosa suave para los textos de ayuda */
+}
+
