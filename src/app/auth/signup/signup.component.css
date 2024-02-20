@@ -8,10 +8,6 @@ h2{
   color:white;
   width: fit-content;
 }
-
-/* Continúa usando la fuente pixelada para mantener la coherencia del estilo */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 .container {
   font-family: 'Press Start 2P', cursive;
 }
