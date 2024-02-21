@@ -11,19 +11,29 @@
 <div class="container retro-form">
   <div class="row justify-content-center">
     <div class="col-lg-6">
-      <h2>Sign in into your account</h2>
-      <form (ngSubmit)="signIn(signInForm)" #signInForm="ngForm">
+      <h2 class="text-center">Create your account</h2>
+      <form (ngSubmit)="register(registerForm)" #registerForm="ngForm">
+        <div class="form-group">
+          <input name="username" ngModel type="text" class="form-control" placeholder="Enter your username:" required>
+          <small id="usernameHelp" class="form-text text-muted">Choose a unique username</small>
+        </div>
         <div class="form-group">
           <input name="email" ngModel type="email" class="form-control" placeholder="Enter your email:" required>
-          <small id="emailHelp" class="form-text text-muted"><b>Enter your registered email account</b></small>
+          <small id="emailHelp" class="form-text text-muted">Your email will be used for login</small>
         </div>
         <div class="form-group">
           <input name="password" ngModel type="password" class="form-control" placeholder="Enter password" required>
         </div>
-        <p>Don't have an account?
-          <a routerLink="/index/register">Sign-Up</a>
+        <div class="form-group">
+          <input name="confirmPassword" ngModel type="password" class="form-control" placeholder="Confirm password" required>
+        </div>
+        <p>Already have an account?
+          <a routerLink="/index/login">Sign-In</a>
         </p>
-        <button type="submit" [disabled]="!signInForm.valid" class="btn btn-primary btn-block">Submit</button>
+        <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary btn-block">Registrarse</button>
+        <div class="mb-3 text-center">
+          <a routerLink="/" class="btn btn-secondary btn-block">Volver</a>
+        </div>
       </form>
     </div>
   </div>

@@ -6,22 +6,15 @@ import { AppComponent } from './app.component';
 //import { CabeceraComponent } from "./cabecera/cabecera.component";
 import {HomeComponent} from "./home/home.component";
 import {IndexComponent} from "./home/index/index.component";
-import {SigninComponent} from "./auth/signin/signin.component";
+import {RegisterComponent} from "./auth/register/register.component";
 import {FormsModule} from "@angular/forms";
-import {SinglepropertyComponent} from "./home/rentals/singleproperty/singleproperty.component";
-import {RentalsComponent} from "./home/rentals/rentals.component";
-import {AddrentalComponent} from "./home/addrental/addrental.component";
-import {SignupComponent} from "./auth/signup/signup.component";
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     IndexComponent,
-    RentalsComponent,
-    SigninComponent,
-    SignupComponent,
-    SinglepropertyComponent,
-    AddrentalComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

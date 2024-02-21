@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  position: fixed;
+  top: 19%;
+}
+
+.retro-form h2, .retro-form form, .retro-form a, .retro-form p {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+.retro-form .form-control {
+  background-color: #000;
+  border: 2px solid #FF007F; /* Rosa retro para el borde */
+  color: #39FF14; /* Verde retro para el texto */
+  margin-bottom: 20px;
+}
+
+.retro-form .form-control::placeholder {
+  color: #39FF14; /* Verde retro para el placeholder */
+}
+
+.retro-form .form-text {
+  color: #39FF14; /* Verde retro para el texto pequeño */
+}
+
+.retro-form .btn-primary {
+  background-color: #FF007F; /* Fondo rosa retro */
+  border-color: #39FF14; /* Borde verde retro */
+  color: #000; /* Texto negro para contraste */
+}
+
+.retro-form .btn-primary:hover {
+  background-color: #39FF14; /* Fondo verde retro al pasar el mouse */
+  color: #000; /* Texto negro para mantener el contraste */
+}
+
+.retro-form a {
+  color: #FF007F; /* Enlaces en rosa retro */
+}
+
+.retro-form a:hover {
+  color: #39FF14; /* Verde retro al pasar el mouse */
+  text-decoration: underline; /* Subrayado para destacar el hover */
+}

@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
   font-family: 'Press Start 2P', cursive !important;
   background-color: #000; /* Adding a dark background for a retro feel */
-  color: whitesmoke; /* Light text color for contrast */
+  color: red; /* Light text color for contrast */
 }
 
 .req {
