@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Property {
-  title: string;
-  id: string;
-  ownerEmail: string;
-  // Añade más propiedades según sea necesario
-}
-
+import {AuthService} from "../service/auth.service";
 
 @Component({
   selector: 'app-home',
@@ -14,19 +7,11 @@ interface Property {
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  selectedProperty: Property = {
-    title: 'Juego de Mesa Ejemplo',
-    id: '1',
-    ownerEmail: 'ejemplo@correo.com'
-    // Añade valores iniciales para las propiedades adicionales según sea necesario
-  };
-  user: string;
-  mode: string = 'list'; // Mantén tu lógica para cambiar entre 'list' y 'single'
+  userName: string = '';
 
-  constructor() {
-    this.user = "Usuario"; // Cambia "Usuario Predeterminado" por el valor que necesites
-  }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.userName = this.authService.getUserName(); // Obtiene el nombre del usuario para mostrarlo
   }
 }

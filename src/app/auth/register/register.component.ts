@@ -18,12 +18,12 @@ export class RegisterComponent implements OnInit {
         this.authService.register(formValue.username, formValue.email, formValue.password)
             .then((userDetails) => {
                 console.log('Registro exitoso', userDetails);
-                this.router.navigate(['/home']); // Asegúrate de que esta ruta exista en tu configuración de rutas
+                this.router.navigate(['/']);
             })
             .catch(error => {
                 console.error('Error during registration:', error);
             });
 
-        registerForm.reset(); // Opcional, dependiendo de tu flujo de usuario
+        registerForm.reset();
     }
 }
