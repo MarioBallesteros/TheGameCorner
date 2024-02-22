@@ -11,37 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <body class="bg-dark">
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <span class="fas fa-dice"></span>
-  <a class="navbar-brand" href="#">Board Game Café</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Inicio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/juegos">Todos los Juegos</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
-    <ng-container *ngIf="userName; else loginRegisterLinks">
-      <span class="navbar-text">
-        Bienvenido, {{ userName }}!
-      </span>
-      <button (click)="logout()" class="btn my-2 my-sm-0" type="button">Cerrar Sesión</button>
-    </ng-container>
-    <ng-template #loginRegisterLinks>
-      <button routerLink="/register" class="btn my-2 my-sm-0" type="button">Regístrate</button>
-    </ng-template>
-  </div>
-</nav>
-<br>
+<app-navbar></app-navbar>
 <!-- Carrusel de imágenes del local -->
 <div id="localCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">

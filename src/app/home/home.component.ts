@@ -1,5 +1,5 @@
-import {Component, OnInit, signal} from '@angular/core';
-import {AuthService} from "../service/auth.service";
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from "../service/auth.service";
 
 @Component({
   selector: 'app-home',
@@ -12,10 +12,12 @@ export class HomeComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    this.userName = this.authService.getUserName(); // Obtiene el nombre del usuario para mostrarlo
+    this.authService.currentUser.subscribe((userName: string | null) => {
+      this.userName = userName || ''; // Asigna el userName o una cadena vacía si es null
+    });
   }
+
   logout() {
     this.authService.logout();
-    // Opcionalmente, maneja cualquier otra lógica necesaria después del logout, como limpiar variables
   }
 }
