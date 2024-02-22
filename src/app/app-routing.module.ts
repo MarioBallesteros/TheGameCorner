@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {IndexComponent} from "./home/index/index.component";
 import {RegisterComponent} from "./auth/register/register.component";
+import {VistaJuegosComponent} from "./vista-juegos/vista-juegos.component";
 
 
 const routes: Routes = [
@@ -11,6 +12,8 @@ const routes: Routes = [
   // { path: 'home/enquiries', component: EnquiriesComponent },
  // { path: 'home/myproperties', component: MyPropertiesComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'juegos', component: VistaJuegosComponent },
+
 
 ];
 

@@ -8,6 +8,7 @@ import {HomeComponent} from "./home/home.component";
 import {IndexComponent} from "./home/index/index.component";
 import {RegisterComponent} from "./auth/register/register.component";
 import {FormsModule} from "@angular/forms";
+import { VistaJuegosComponent } from './vista-juegos/vista-juegos.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {FormsModule} from "@angular/forms";
     HomeComponent,
     IndexComponent,
     RegisterComponent,
+    VistaJuegosComponent,
   ],
   imports: [
     BrowserModule,
