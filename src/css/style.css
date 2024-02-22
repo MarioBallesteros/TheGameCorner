@@ -2,35 +2,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 /* GLOBAL CSS STARTS */
-:root {
-  --retro-pink: #FF007F;
-  --retro-green: #39FF14;
-  --site-secondary: var(--retro-green) !important;
-  --btn-hover: var(--retro-pink) !important;
-}
-
 body {
   overflow-x: hidden;
   font-family: 'Press Start 2P', cursive !important;
-  background-color: #000; /* Adding a dark background for a retro feel */
-  color: red; /* Light text color for contrast */
+  background-color: #000000; /* Adding a dark background for a retro feel */
+  color: #FFFFFF; /* Ensuring text is white for readability */
 }
 
 .req {
-  color: var(--retro-pink);
+  color: #FF007F;
   font-weight: bold;
 }
 
 .b-class-secondary, .s-d {
-  background: var(--site-secondary);
-  border-color: var(--site-secondary);
+  background: #39FF14;
+  border-color: #39FF14;
   color: whitesmoke;
 }
 
 .btn {
   font-weight: bold;
-  color: var(--retro-pink);
-  border: 1px solid var(--retro-pink);
+  color: #FF007F;
+  border: 1px solid #FF007F;
 }
 
 .pointer {
@@ -38,8 +31,8 @@ body {
 }
 
 .btn:hover {
-  background: var(--btn-hover) !important;
-  border-color: var(--btn-hover);
+  background: #FF007F !important;
+  border-color: #FF007F;
   color: whitesmoke !important;
   box-shadow: 0 1rem 3rem rgba(255, 0, 143, 0.4) !important; /* Adding a pink glow */
 }
@@ -51,12 +44,12 @@ body {
 }
 
 .btn:active {
-  border: 2px solid rgb(73, 73, 73) !important;
+  border: 2px solid #494949 !important;
 }
 
 ::selection {
-  background: var(--retro-pink);
-  color: #fff;
+  background: #FF007F;
+  color: #FFFFFF;
   font-weight: bolder;
 }
 
@@ -71,24 +64,20 @@ body {
 
 ::-webkit-scrollbar-track {
   border-radius: 100vh;
-  background: rgb(194, 192, 192);
+  background: #C2C0C0;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 100vh;
-  background: linear-gradient(
-    var(--retro-pink),
-    var(--retro-green),
-    var(--retro-pink)
-  );
+  background: linear-gradient(#FF007F, #39FF14, #FF007F);
 }
 
 .sec-icon::before, .sec-icon::after {
-  background: var(--retro-pink);
+  background: #FF007F;
 }
 
 #up-arrow i:hover {
-  background-color: var(--retro-green) !important;
+  background-color: #39FF14 !important;
   box-shadow: 0 0 1rem rgba(57, 255, 20, 1) !important;
 }
 
@@ -100,45 +89,45 @@ body {
 }
 
 .nav-item a:hover {
-  background-color: var(--retro-pink);
+  background-color: #FF007F;
   color: whitesmoke;
 }
 
 /* Adjusting Cards for Retro Style */
 .card {
-  background-color: #222; /* Dark background for cards */
+  background-color: #222222; /* Dark background for cards */
   color: whitesmoke; /* Light text color for readability */
-  border: 1px solid var(--retro-pink); /* Pink border for a retro vibe */
+  border: 1px solid #FF007F; /* Pink border for a retro vibe */
 }
 
 /* Modal and Form Adjustments for Retro Style */
 .modal-content {
-  background-color: #000; /* Dark background for modals */
+  background-color: #000000; /* Dark background for modals */
   color: whitesmoke; /* Light text for contrast */
 }
 
 .form-control {
-  border-color: var(--retro-pink);
+  border-color: #FF007F;
   color: whitesmoke;
 }
 
 .form-control:focus {
-  border-color: var(--retro-green);
+  border-color: #39FF14;
   box-shadow: 0 0 0 0.25rem rgba(57, 255, 20, 0.25);
 }
 
 /* Footer Adjustments for Retro Style */
 footer {
-  background-color: #222; /* Dark background for the footer */
+  background-color: #222222; /* Dark background for the footer */
   color: whitesmoke;
 }
 
 footer a {
-  color: var(--retro-green);
+  color: #39FF14;
 }
 
 footer a:hover {
-  color: var(--retro-pink);
+  color: #FF007F;
 }
 
 /* Responsive and Additional Styles as needed */

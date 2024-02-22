@@ -27,4 +27,9 @@ export class AuthService {
   }
 
   // Agregar otros métodos según sea necesario, como login, logout, etc.
+  logout() {
+    this.userDetails = null;
+    this.router.navigate(['/']);
+    window.location.reload();
+  }
 }
