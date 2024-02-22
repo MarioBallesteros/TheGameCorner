@@ -1,0 +1,63 @@
+/* Estilos Generales */
+.reserva-container {
+  color: #FFFFFF;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #FF007F;
+}
+
+.juego-detalle {
+  margin-bottom: 20px;
+}
+
+.juego-titulo {
+  color: #FF007F;
+}
+
+.juego-imagen {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #39FF14;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.juego-descripcion {
+  background-color: #222;
+  padding: 10px;
+  border: 1px solid #FF007F;
+}
+
+/* Estilos del Formulario */
+.reserva-form .form-group {
+  margin-bottom: 15px;
+}
+
+.reserva-form .form-control {
+  background-color: #222;
+  border: 1px solid #39FF14;
+  color: #FFFFFF;
+}
+
+.reserva-form .form-label {
+  color: #39FF14;
+}
+
+.btn-reserva {
+  background-color: #FF007F;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.btn-reserva:hover {
+  background-color: #ff1493;
+}
+
+@media (max-width: 768px) {
+  .reserva-container {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,30 @@
+<!-- Bootstrap CDN Link -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+<!-- Fontawesome CDN Link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Custom CSS Link -->
+<link rel="stylesheet" href="../../css/style.css" />
+<!-- Efecto retro -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<body class="bg-dark">
+<app-navbar></app-navbar>
+<div class="container">
+  <h3 class="fw-bold fs-2 text-center retro-text">Nuestros Juegos</h3>
+  <div class="row mt-4">
+    <div class="col-md-4 mb-4" *ngFor="let game of featuredGames">
+      <div class="card h-100">
+        <img src="{{game.imageUrl}}" class="card-img-top" alt="{{game.name}}">
+        <div class="card-body">
+          <h5 class="card-title">{{game.name}}</h5>
+          <p class="card-text">{{game.description}}</p>
+          <button *ngIf="userName" (click)="reserveGame(game.id)" class="btn btn-primary">Reservar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
