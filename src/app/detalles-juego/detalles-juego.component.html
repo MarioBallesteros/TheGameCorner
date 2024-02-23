@@ -1,1 +1,31 @@
-<p>detalles-juego works!</p>
+<!-- Bootstrap CDN Link -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+<!-- Fontawesome CDN Link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Custom CSS Link -->
+<link rel="stylesheet" href="../../css/style.css" />
+<!-- Efecto retro -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-12">
+      <!-- Tarjeta para Detalles del Juego -->
+      <div class="card mb-3">
+        <!-- Asume que 'juego' es el objeto del juego actual en el componente de detalles -->
+        <img src="{{juego.imageUrl}}" class="card-img-top" alt="Imagen del juego">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{juego.name}}</h5>
+          <p class="card-text">{{juego.description}}</p>
+          <button (click)="estaLogeado ? reserveGame(juego.id) : mostrarMensajeLogin()" class="btn btn-primary">
+            Reservar
+          </button>
+          <button (click)="goBack()" class="btn btn-outline-secondary">Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,8 +7,8 @@
 
   <form (ngSubmit)="hacerReserva()" class="reserva-form">
     <div class="form-group">
-      <label for="fechaReserva" class="form-label">Fecha de reserva:</label>
-      <input type="date" id="fechaReserva" [(ngModel)]="fechaReserva" name="fechaReserva" class="form-control">
+      <label for="fechaReserva" class="form-label">Fecha de reserva (Disponible solo a partir del próximo lunes):</label>
+      <input type="date" id="fechaReserva" [(ngModel)]="fechaReserva" name="fechaReserva" [min]="fechaMinima" class="form-control">
     </div>
 
     <div class="form-group">

@@ -1,0 +1,59 @@
+/* Estilos Generales */
+body {
+  background-color: #000; /* Fondo oscuro */
+  font-family: 'Press Start 2P', cursive; /* Fuente retro */
+  color: #FFFFFF; /* Texto blanco */
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #222; /* Fondo para el contenedor */
+  border-radius: 8px;
+}
+
+.table {
+  color: #FFFFFF;
+}
+
+/* Encabezado de la Tabla */
+.table thead th {
+  background-color: #39FF14; /* Verde neón para encabezados de tabla */
+}
+
+/* Botones */
+.btn-primary {
+  background-color: #FF007F; /* Rosa neón */
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #ff1493; /* Rosa más claro al pasar el mouse */
+}
+
+.btn-outline-secondary {
+  color: #FF007F; /* Rosa neón */
+  border-color: #FF007F;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #FF007F;
+  color: #000;
+}
+
+/* Mejoras visuales para la tabla */
+.table td, .table th {
+  border-top: 1px solid #555; /* Bordes más sutiles para las celdas */
+}
+
+/* Ajustes de Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .table {
+    font-size: 0.8rem; /* Fuente más pequeña para dispositivos móviles */
+  }
+}

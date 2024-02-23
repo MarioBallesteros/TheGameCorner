@@ -33,4 +33,8 @@ reserveGame(gameId: number): void {
 // this.router.navigate(['/login']);
 }
 }
+
+  verDetalles(gameId: number): void {
+    this.router.navigate(['/juegos/', gameId]);
+  }
 }

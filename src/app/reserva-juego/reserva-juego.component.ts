@@ -1,6 +1,7 @@
 import { Router, ActivatedRoute } from '@angular/router';
-import { JuegosService } from '../juegos.service';
 import { Component, OnInit } from '@angular/core';
+import { JuegosService } from '../service/juegos.service';
+import { ReservasService } from '../service/reservas.service'; // Asegúrate de importar ReservasService
 
 @Component({
   selector: 'app-reserva-juego',
@@ -8,26 +9,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reserva-juego.component.css']
 })
 export class ReservaJuegoComponent implements OnInit {
-  juego: any; // Deberías definir una interfaz más precisa para esto
+  juego: any;
   horarios = ['mañana', 'tarde', 'noche'];
   fechaReserva: Date | null = null;
   horarioSeleccionado: string = '';
+  fechaMinima: string = '';
 
   constructor(
     private route: ActivatedRoute,
-    private juegosService: JuegosService,
+    private juegosService: JuegosService, // Aún necesitas esto para obtener los detalles del juego
+    private reservasService: ReservasService, // Inyecta ReservasService
     private router: Router
   ) {}
 
-
   ngOnInit(): void {
     this.obtenerDatosJuego();
+    this.calcularFechaMinima();
   }
 
   obtenerDatosJuego(): void {
     const juegoId = +this.route.snapshot.paramMap.get('id')!;
-    this.juego = this.juegosService.obtenerJuegoPorId(juegoId); // Asume un método en tu servicio
-    // Recuerda manejar casos en los que el juego no se encuentra
+    this.juego = this.juegosService.obtenerJuegoPorId(juegoId);
+    // Maneja el caso de que el juego no se encuentre
   }
 
   hacerReserva(): void {
@@ -37,15 +40,22 @@ export class ReservaJuegoComponent implements OnInit {
     }
 
     const reserva = {
+      id: Math.floor(Math.random() * 10000),
       juegoId: this.juego.id,
+      usuario: '',
       fecha: this.fechaReserva,
       horario: this.horarioSeleccionado,
-      // Aquí podrías agregar más datos según sean necesarios
     };
 
-    this.juegosService.agregarReserva(reserva);
+    this.reservasService.agregarReserva(reserva); // Usa ReservasService para agregar la reserva
     alert('Reserva realizada con éxito.');
     this.router.navigate(['/juegos']);
   }
 
+  calcularFechaMinima() {
+    const hoy = new Date();
+    hoy.setDate(hoy.getDate() + (1 + 7 - hoy.getDay()) % 7); // Calcula el próximo lunes
+    // Formatea la fecha a YYYY-MM-DD
+    this.fechaMinima = hoy.toISOString().split('T')[0];
+  }
 }

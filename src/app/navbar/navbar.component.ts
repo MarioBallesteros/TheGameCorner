@@ -8,6 +8,8 @@ import { AuthService } from "../service/auth.service";
 })
 export class NavbarComponent implements OnInit {
   userName: string | null = null;
+  boolMostrarInfoUsuario: boolean = false; // Controla la visibilidad de la ventana emergente
+
 
   constructor(private authService: AuthService) { }
 
@@ -19,5 +21,9 @@ export class NavbarComponent implements OnInit {
 
   logout(): void {
     this.authService.logout();
+  }
+
+  mostrarInfoUsuario() {
+      this.boolMostrarInfoUsuario = !this.boolMostrarInfoUsuario;
   }
 }

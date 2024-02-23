@@ -24,12 +24,20 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/juegos">Todos los Juegos</a>
       </li>
+      <!-- Botón Mis Reservas visible solo si el usuario está logueado -->
+      <li class="nav-item" *ngIf="userName">
+        <a class="nav-link" routerLink="/reservas">Mis Reservas</a>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
     </form>
     <ng-container *ngIf="userName; else loginRegisterLinks">
+      <!-- Icono de usuario como botón para mostrar la información -->
+      <button (click)="mostrarInfoUsuario()" class="btn btn-secondary">
+        <i class="fas fa-user"></i>
+      </button>
       <span class="navbar-text">
         Bienvenido, {{ userName }}!
       </span>
@@ -41,3 +49,12 @@
   </div>
 </nav>
 <br>
+<!-- Superposición con la información del usuario -->
+<div class="user-info-overlay" *ngIf="boolMostrarInfoUsuario">
+  <div class="user-info-modal">
+    <h5>Información del Usuario</h5>
+    <p>Nombre de usuario: {{ userName }}</p>
+    <!-- Agrega más información del usuario aquí -->
+    <button (click)="mostrarInfoUsuario()" class="btn btn-primary">Cerrar</button>
+  </div>
+</div>

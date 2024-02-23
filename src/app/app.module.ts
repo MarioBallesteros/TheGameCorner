@@ -11,6 +11,7 @@ import { VistaJuegosComponent } from './vista-juegos/vista-juegos.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DetallesJuegoComponent } from './detalles-juego/detalles-juego.component';
 import {ReservaJuegoComponent} from "./reserva-juego/reserva-juego.component";
+import { MisReservasComponent } from './mis-reservas/mis-reservas.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {ReservaJuegoComponent} from "./reserva-juego/reserva-juego.component";
     NavbarComponent,
     DetallesJuegoComponent,
     ReservaJuegoComponent,
+    MisReservasComponent,
   ],
   imports: [
     BrowserModule,

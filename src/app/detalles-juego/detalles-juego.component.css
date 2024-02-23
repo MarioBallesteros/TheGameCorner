@@ -1,0 +1,24 @@
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #000;
+  color: #fff;
+}
+
+.display-4 {
+  font-size: 2rem; /* Tamaño más adecuado para fuentes pixeladas */
+}
+
+.btn-primary {
+  background-color: #39FF14; /* Verde neón */
+  border: none;
+}
+
+.btn-outline-secondary {
+  border-color: #FF007F; /* Rosa neón */
+  color: #FF007F;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #FF007F;
+  color: #000;
+}
