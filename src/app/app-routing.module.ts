@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
-import {IndexComponent} from "./home/index/index.component";
-import {RegisterComponent} from "./auth/register/register.component";
+import {RegisterComponent} from "./register/register.component";
 import {VistaJuegosComponent} from "./vista-juegos/vista-juegos.component";
+import {ReservaJuegoComponent} from "./reserva-juego/reserva-juego.component";
+import {DetallesJuegoComponent} from "./detalles-juego/detalles-juego.component";
+import {MisReservasComponent} from "./mis-reservas/mis-reservas.component";
 
 
 const routes: Routes = [
@@ -13,8 +15,9 @@ const routes: Routes = [
  // { path: 'home/myproperties', component: MyPropertiesComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'juegos', component: VistaJuegosComponent },
-
-
+  { path: 'reservas', component: MisReservasComponent },
+  { path: 'reserva/:id', component: ReservaJuegoComponent },
+  { path: 'juegos/:id', component: DetallesJuegoComponent },
 ];
 
 @NgModule({

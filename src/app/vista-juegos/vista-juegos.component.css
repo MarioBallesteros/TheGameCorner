@@ -1,0 +1,133 @@
+/* Google Font CDN Link for Retro Effect */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+/* GLOBAL CSS STARTS */
+body {
+  overflow-x: hidden;
+  font-family: 'Press Start 2P', cursive !important;
+  background-color: #000000; /* Adding a dark background for a retro feel */
+  color: #FFFFFF; /* Ensuring text is white for readability */
+}
+
+.req {
+  color: #FF007F;
+  font-weight: bold;
+}
+
+.b-class-secondary, .s-d {
+  background: #39FF14;
+  border-color: #39FF14;
+  color: whitesmoke;
+}
+
+.btn {
+  font-weight: bold;
+  color: #FF007F;
+  border: 1px solid #FF007F;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #FF007F !important;
+  border-color: #FF007F;
+  color: whitesmoke !important;
+  box-shadow: 0 1rem 3rem rgba(255, 0, 143, 0.4) !important; /* Adding a pink glow */
+}
+
+.hero-btn:hover {
+  color: #212529 !important;
+  background-color: #f8f9fa !important;
+  border-color: #f8f9fa !important;
+}
+
+.btn:active {
+  border: 2px solid #494949 !important;
+}
+
+::selection {
+  background: #FF007F;
+  color: #FFFFFF;
+  font-weight: bolder;
+}
+
+.section-heading {
+  font-weight: 600;
+}
+
+/* Custom Scroll bar for Retro Look */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #C2C0C0;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100vh;
+  background: linear-gradient(#FF007F, #39FF14, #FF007F);
+}
+
+.sec-icon::before, .sec-icon::after {
+  background: #FF007F;
+}
+
+#up-arrow i:hover {
+  background-color: #39FF14 !important;
+  box-shadow: 0 0 1rem rgba(57, 255, 20, 1) !important;
+}
+
+/* Adjusting Navbar for Retro Style */
+.navbar {
+  background: rgba(0, 0, 0, 0.75); /* Dark background with slight transparency */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.nav-item a:hover {
+  background-color: #FF007F;
+  color: whitesmoke;
+}
+
+/* Adjusting Cards for Retro Style */
+.card {
+  background-color: #222222; /* Dark background for cards */
+  color: whitesmoke; /* Light text color for readability */
+  border: 1px solid #FF007F; /* Pink border for a retro vibe */
+}
+
+/* Modal and Form Adjustments for Retro Style */
+.modal-content {
+  background-color: #000000; /* Dark background for modals */
+  color: whitesmoke; /* Light text for contrast */
+}
+
+.form-control {
+  border-color: #FF007F;
+  color: whitesmoke;
+}
+
+.form-control:focus {
+  border-color: #39FF14;
+  box-shadow: 0 0 0 0.25rem rgba(57, 255, 20, 0.25);
+}
+
+/* Footer Adjustments for Retro Style */
+footer {
+  background-color: #222222; /* Dark background for the footer */
+  color: whitesmoke;
+}
+
+footer a {
+  color: #39FF14;
+}
+
+footer a:hover {
+  color: #FF007F;
+}
+
+/* Responsive and Additional Styles as needed */

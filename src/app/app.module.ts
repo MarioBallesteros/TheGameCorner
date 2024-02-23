@@ -5,18 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 //import { CabeceraComponent } from "./cabecera/cabecera.component";
 import {HomeComponent} from "./home/home.component";
-import {IndexComponent} from "./home/index/index.component";
-import {RegisterComponent} from "./auth/register/register.component";
+import {RegisterComponent} from "./register/register.component";
 import {FormsModule} from "@angular/forms";
 import { VistaJuegosComponent } from './vista-juegos/vista-juegos.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { DetallesJuegoComponent } from './detalles-juego/detalles-juego.component';
+import {ReservaJuegoComponent} from "./reserva-juego/reserva-juego.component";
+import { MisReservasComponent } from './mis-reservas/mis-reservas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    IndexComponent,
     RegisterComponent,
     VistaJuegosComponent,
+    NavbarComponent,
+    DetallesJuegoComponent,
+    ReservaJuegoComponent,
+    MisReservasComponent,
   ],
   imports: [
     BrowserModule,
