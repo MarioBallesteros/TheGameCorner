@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <div class="container mt-5">
-  <h2>Mis Reservas</h2>
+  <h2 class="puntos-usuario">Mis Reservas</h2>
   <table class="table">
     <thead>
     <tr>
@@ -19,6 +19,7 @@
       <th>Juego</th>
       <th>Fecha</th>
       <th>Horario</th>
+      <th>Estado</th> <!-- Nuevo encabezado para mostrar el estado de la reserva -->
       <th>Acciones</th>
     </tr>
     </thead>
@@ -26,16 +27,16 @@
     <tr *ngFor="let reserva of reservas">
       <ng-container *ngIf="editandoId === reserva.id; else vistaNormal">
         <td>{{ reserva.id }}</td>
-        <td>{{ reserva.juegoId }}</td> <!-- Muestra el ID del juego sin permitir edición -->
-        <td>{{ reserva.fecha | date }}</td> <!-- Muestra la fecha sin permitir edición -->
+        <td>{{ reserva.juegoId }}</td>
+        <td>{{ reserva.fecha | date }}</td>
         <td>
-          <!-- Solo permite editar el horario -->
           <select [(ngModel)]="reserva.horario" class="form-control">
             <option value="mañana">Mañana</option>
             <option value="tarde">Tarde</option>
             <option value="noche">Noche</option>
           </select>
         </td>
+        <td>{{ reserva.esCancelada ? 'Cancelada' : 'Activa' }}</td> <!-- Muestra el estado de la reserva -->
         <td>
           <button (click)="guardarEdicion(reserva)" class="btn btn-success">Guardar</button>
           <button (click)="cancelarEdicion()" class="btn btn-secondary">Cancelar</button>
@@ -43,16 +44,22 @@
       </ng-container>
       <ng-template #vistaNormal>
         <td>{{ reserva.id }}</td>
-        <td>{{ reserva.juegoId }}</td> <!-- Considera mostrar el nombre del juego -->
+        <td>{{ reserva.juegoId }}</td>
         <td>{{ reserva.fecha | date }}</td>
         <td>{{ reserva.horario }}</td>
+        <td>{{ reserva.esCancelada ? 'Cancelada' : 'Activa' }}</td>
         <td>
-          <button (click)="iniciarEdicion(reserva.id)" class="btn btn-primary">Editar</button>
-          <button (click)="eliminarReserva(reserva.id)" class="btn btn-danger">Eliminar</button>
+          <button *ngIf="!reserva.esCancelada" (click)="iniciarEdicion(reserva.id)" class="btn btn-primary">Editar</button>
+          <button *ngIf="!reserva.esCancelada" (click)="eliminarReserva(reserva.id)" class="btn btn-danger">Eliminar</button>
         </td>
       </ng-template>
     </tr>
     </tbody>
+    <div class="puntos-usuario">
+      <h3>Puntos del Usuario</h3>
+      <p>Has acumulado {{ puntosUsuario | async }} puntos.</p>
+    </div>
     <button (click)="volver()" class="btn my-2 my-sm-0" type="button">Volver</button>
   </table>
+
 </div>

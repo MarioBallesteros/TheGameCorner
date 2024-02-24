@@ -7,6 +7,7 @@ export interface Reserva {
   usuario: string;
   fecha: Date;
   horario: string; // 'mañana', 'tarde', 'noche'
+  esCancelada?: boolean; // Propiedad añadida para indicar si la reserva está cancelada
 }
 
 @Injectable({
@@ -14,52 +15,64 @@ export interface Reserva {
 })
 export class ReservasService {
   private reservasSubject = new BehaviorSubject<Reserva[]>([]);
-  private puntosUsuario = new BehaviorSubject<number>(0); // Añadido para manejar puntos de usuario
-
-  public reservas: Reserva[] = [
-    // Inicializa con las reservas existentes si las hay
-  ];
+  private puntosUsuarioSubject = new BehaviorSubject<number>(0); // Añadido para manejar puntos de usuario
+  private puntosPorReserva = 10;
+  private puntosParaReservaGratuita = 100;
 
   constructor() {
-    this.reservasSubject.next(this.reservas); // Inicializar con reservas existentes
+    this.reservasSubject.next([]); // Inicializar con un array vacío
   }
 
   obtenerReservas(): Observable<Reserva[]> {
     return this.reservasSubject.asObservable();
   }
 
-  // Añadido: Método para agregar una reserva y actualizar los puntos de usuario
   agregarReserva(reserva: Reserva) {
-    this.reservas.push(reserva);
-    this.actualizarPuntos(10); // Supongamos que cada reserva añade 10 puntos
-    this.reservasSubject.next(this.reservas);
-  }
+    const reservasActuales = this.reservasSubject.value;
+    reservasActuales.push(reserva);
+    this.reservasSubject.next(reservasActuales);
 
-  actualizarReserva(id: number, reservaActualizada: Reserva): void {
-    const index = this.reservas.findIndex(reserva => reserva.id === id);
-    if (index !== -1) {
-      this.reservas[index] = reservaActualizada;
-      this.reservasSubject.next(this.reservas);
+    // Añadir puntos por reserva
+    this.actualizarPuntos(this.puntosPorReserva);
+
+    // Verificar si se alcanzó la cantidad de puntos para una reserva gratuita
+    if (this.puntosUsuarioSubject.value >= this.puntosParaReservaGratuita) {
+      alert('¡Enhorabuena has alcanzado 100 puntos! esta reserva será gratuita');
+      this.resetearPuntos();
     }
   }
 
-  // Añadido: Método para actualizar los puntos de usuario
+  actualizarReserva(reservaActualizada: Reserva): void {
+    const reservasActuales = this.reservasSubject.value;
+    const index = reservasActuales.findIndex(reserva => reserva.id === reservaActualizada.id);
+    if (index !== -1) {
+      reservasActuales[index] = reservaActualizada;
+      this.reservasSubject.next(reservasActuales);
+    }
+  }
+
+  cancelarReserva(id: number): void {
+    const reservasActuales = this.reservasSubject.value;
+    const reservasActualizadas = reservasActuales.map(reserva => {
+      if (reserva.id === id) {
+        return { ...reserva, esCancelada: true };
+      } else {
+        return reserva;
+      }
+    });
+    this.reservasSubject.next(reservasActualizadas);
+  }
+
   private actualizarPuntos(puntos: number) {
-    let puntosActuales = this.puntosUsuario.value;
-    this.puntosUsuario.next(puntosActuales + puntos);
+    const puntosActuales = this.puntosUsuarioSubject.value;
+    this.puntosUsuarioSubject.next(puntosActuales + puntos);
   }
 
-  // Añadido: Método para obtener los puntos actuales del usuario
+  private resetearPuntos() {
+    this.puntosUsuarioSubject.next(0);
+  }
+
   obtenerPuntosUsuario(): Observable<number> {
-    return this.puntosUsuario.asObservable();
-  }
-
-  // Considera añadir métodos para eliminar reservas si es necesario
-  eliminarReserva(id: number) {
-    const index = this.reservas.findIndex(reserva => reserva.id === id);
-    if (index !== -1) {
-      this.reservas.splice(index, 1); // Elimina la reserva del array
-      this.reservasSubject.next(this.reservas); // Actualiza el BehaviorSubject con el nuevo array de reservas
-    }
+    return this.puntosUsuarioSubject.asObservable();
   }
 }

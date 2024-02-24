@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Reserva, ReservasService} from "../service/reservas.service";
 import { Location } from '@angular/common';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-mis-reservas',
@@ -9,6 +10,7 @@ import { Location } from '@angular/common';
 })
 export class MisReservasComponent implements OnInit {
   reservas: Reserva[] = [];
+  puntosUsuario!: Observable<number>;
 
   constructor(private reservasService: ReservasService,
               private location: Location) {}
@@ -16,6 +18,7 @@ export class MisReservasComponent implements OnInit {
   ngOnInit(): void {
     this.reservasService.obtenerReservas().subscribe(reservas => {
       this.reservas = reservas;
+      this.puntosUsuario = this.reservasService.obtenerPuntosUsuario();
     });
   }
 
@@ -26,7 +29,7 @@ export class MisReservasComponent implements OnInit {
   }
 
   guardarEdicion(reserva: Reserva): void {
-    this.reservasService.actualizarReserva(reserva.id, reserva);
+    this.reservasService.actualizarReserva(reserva);
     this.editandoId = null;
   }
 
@@ -36,7 +39,7 @@ export class MisReservasComponent implements OnInit {
 
   eliminarReserva(id: number): void {
     if (confirm('¿Estás seguro de que deseas eliminar esta reserva?')) {
-      this.reservasService.eliminarReserva(id);
+      this.reservasService.cancelarReserva(id);
     }
   }
   volver(): void {
