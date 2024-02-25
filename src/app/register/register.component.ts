@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
     const formValue = registerForm.value;
     this.authService.register(formValue.username);
     console.log('Registro exitoso');
-    this.router.navigate(['/']); // Ajusta esta ruta a donde quieras llevar al usuario después del registro
+    this.router.navigate(['/']);
     registerForm.reset();
   }
 }

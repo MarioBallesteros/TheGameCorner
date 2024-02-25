@@ -1,7 +1,7 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { JuegosService } from '../service/juegos.service';
-import { ReservasService } from '../service/reservas.service'; // Asegúrate de importar ReservasService
+import { ReservasService } from '../service/reservas.service';
 
 @Component({
   selector: 'app-reserva-juego',
@@ -17,8 +17,8 @@ export class ReservaJuegoComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private juegosService: JuegosService, // Aún necesitas esto para obtener los detalles del juego
-    private reservasService: ReservasService, // Inyecta ReservasService
+    private juegosService: JuegosService,
+    private reservasService: ReservasService,
     private router: Router
   ) {}
 
@@ -30,7 +30,6 @@ export class ReservaJuegoComponent implements OnInit {
   obtenerDatosJuego(): void {
     const juegoId = +this.route.snapshot.paramMap.get('id')!;
     this.juego = this.juegosService.obtenerJuegoPorId(juegoId);
-    // Maneja el caso de que el juego no se encuentre
   }
 
   hacerReserva(): void {
@@ -47,15 +46,14 @@ export class ReservaJuegoComponent implements OnInit {
       horario: this.horarioSeleccionado,
     };
 
-    this.reservasService.agregarReserva(reserva); // Usa ReservasService para agregar la reserva
+    this.reservasService.agregarReserva(reserva);
     alert('Reserva realizada con éxito.');
     this.router.navigate(['/juegos']);
   }
 
   calcularFechaMinima() {
     const hoy = new Date();
-    hoy.setDate(hoy.getDate() + (1 + 7 - hoy.getDay()) % 7); // Calcula el próximo lunes
-    // Formatea la fecha a YYYY-MM-DD
+    hoy.setDate(hoy.getDate() + (1 + 7 - hoy.getDay()) % 7);
     this.fechaMinima = hoy.toISOString().split('T')[0];
   }
 }

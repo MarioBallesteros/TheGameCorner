@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.authService.currentUser.subscribe((userName: string | null) => {
-      this.userName = userName || ''; // Asigna el userName o una cadena vacía si es null
+      this.userName = userName || '';
     });
     this.juegosService.obtenerJuegos().pipe(
       map(juegos => juegos.slice(0, 3))

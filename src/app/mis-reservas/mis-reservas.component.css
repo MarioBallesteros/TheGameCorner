@@ -1,15 +1,14 @@
-/* Estilos Generales */
 body {
-  background-color: #000; /* Fondo oscuro */
-  font-family: 'Press Start 2P', cursive; /* Fuente retro */
-  color: #FFFFFF; /* Texto blanco */
+  background-color: #000;
+  font-family: 'Press Start 2P', cursive;
+  color: #FFFFFF;
 }
 
 .container {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #222; /* Fondo para el contenedor */
+  background-color: #222;
   border-radius: 8px;
 }
 
@@ -17,23 +16,21 @@ body {
   color: #FFFFFF;
 }
 
-/* Encabezado de la Tabla */
 .table thead th {
-  background-color: #39FF14; /* Verde neón para encabezados de tabla */
+  background-color: #39FF14;
 }
 
-/* Botones */
 .btn-primary {
-  background-color: #FF007F; /* Rosa neón */
+  background-color: #FF007F;
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #ff1493; /* Rosa más claro al pasar el mouse */
+  background-color: #ff1493;
 }
 
 .btn-outline-secondary {
-  color: #FF007F; /* Rosa neón */
+  color: #FF007F;
   border-color: #FF007F;
 }
 
@@ -42,30 +39,27 @@ body {
   color: #000;
 }
 
-/* Mejoras visuales para la tabla */
 .table td, .table th {
-  border-top: 1px solid #555; /* Bordes más sutiles para las celdas */
+  border-top: 1px solid #555;
 }
 
-/* Ajustes de Responsive Design */
 @media (max-width: 768px) {
   .container {
     padding: 10px;
   }
 
   .table {
-    font-size: 0.8rem; /* Fuente más pequeña para dispositivos móviles */
+    font-size: 0.8rem;
   }
 }
 
-/* Nuevos estilos para los puntos del usuario */
 .puntos-usuario {
   margin-top: 20px;
   padding: 10px;
-  background-color: #333; /* Fondo más oscuro para resaltar */
+  background-color: #333;
   border-radius: 8px;
 }
 
 .puntos-usuario h3 {
-  color: #39FF14; /* Color verde neón para el título */
+  color: #39FF14;
 }

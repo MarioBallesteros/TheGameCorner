@@ -10,9 +10,6 @@ import {MisReservasComponent} from "./mis-reservas/mis-reservas.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
- // { path: 'allproperties', component: AllPropertiesComponent }
-  // { path: 'home/enquiries', component: EnquiriesComponent },
- // { path: 'home/myproperties', component: MyPropertiesComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'juegos', component: VistaJuegosComponent },
   { path: 'reservas', component: MisReservasComponent },

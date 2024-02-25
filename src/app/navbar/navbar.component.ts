@@ -8,7 +8,7 @@ import { AuthService } from "../service/auth.service";
 })
 export class NavbarComponent implements OnInit {
   userName: string | null = null;
-  boolMostrarInfoUsuario: boolean = false; // Controla la visibilidad de la ventana emergente
+  boolMostrarInfoUsuario: boolean = false;
 
 
   constructor(private authService: AuthService) { }

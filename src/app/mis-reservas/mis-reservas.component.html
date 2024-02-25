@@ -19,7 +19,7 @@
       <th>Juego</th>
       <th>Fecha</th>
       <th>Horario</th>
-      <th>Estado</th> <!-- Nuevo encabezado para mostrar el estado de la reserva -->
+      <th>Estado</th>
       <th>Acciones</th>
     </tr>
     </thead>
@@ -36,7 +36,7 @@
             <option value="noche">Noche</option>
           </select>
         </td>
-        <td>{{ reserva.esCancelada ? 'Cancelada' : 'Activa' }}</td> <!-- Muestra el estado de la reserva -->
+        <td>{{ reserva.esCancelada ? 'Cancelada' : 'Activa' }}</td>
         <td>
           <button (click)="guardarEdicion(reserva)" class="btn btn-success">Guardar</button>
           <button (click)="cancelarEdicion()" class="btn btn-secondary">Cancelar</button>

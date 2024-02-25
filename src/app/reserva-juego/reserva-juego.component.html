@@ -17,7 +17,9 @@
         <option *ngFor="let horario of horarios" [value]="horario">{{ horario }}</option>
       </select>
     </div>
-
+    <div class="mb-3 text-center">
     <button type="submit" class="btn btn-reserva">Reservar</button>
+      <button routerLink="/juegos" class="btn btn-secondary">Volver</button>
+    </div>
   </form>
 </div>

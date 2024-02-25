@@ -22,7 +22,7 @@ export class MisReservasComponent implements OnInit {
     });
   }
 
-  editandoId: number | null = null; // ID de la reserva que se está editando
+  editandoId: number | null = null;
 
   iniciarEdicion(id: number): void {
     this.editandoId = id;

@@ -7,7 +7,7 @@ export interface Reserva {
   usuario: string;
   fecha: Date;
   horario: string; // 'mañana', 'tarde', 'noche'
-  esCancelada?: boolean; // Propiedad añadida para indicar si la reserva está cancelada
+  esCancelada?: boolean;
 }
 
 @Injectable({
@@ -15,12 +15,12 @@ export interface Reserva {
 })
 export class ReservasService {
   private reservasSubject = new BehaviorSubject<Reserva[]>([]);
-  private puntosUsuarioSubject = new BehaviorSubject<number>(0); // Añadido para manejar puntos de usuario
+  private puntosUsuarioSubject = new BehaviorSubject<number>(0);
   private puntosPorReserva = 10;
   private puntosParaReservaGratuita = 100;
 
   constructor() {
-    this.reservasSubject.next([]); // Inicializar con un array vacío
+    this.reservasSubject.next([]);
   }
 
   obtenerReservas(): Observable<Reserva[]> {
@@ -32,10 +32,8 @@ export class ReservasService {
     reservasActuales.push(reserva);
     this.reservasSubject.next(reservasActuales);
 
-    // Añadir puntos por reserva
     this.actualizarPuntos(this.puntosPorReserva);
 
-    // Verificar si se alcanzó la cantidad de puntos para una reserva gratuita
     if (this.puntosUsuarioSubject.value >= this.puntosParaReservaGratuita) {
       alert('¡Enhorabuena has alcanzado 100 puntos! esta reserva será gratuita');
       this.resetearPuntos();

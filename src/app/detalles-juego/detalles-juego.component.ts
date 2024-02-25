@@ -42,6 +42,6 @@ export class DetallesJuegoComponent implements OnInit {
   }
 
   mostrarMensajeLogin() {
-    alert('Debes estar logueado para realizar una reserva.');
+    alert('Debes estar logueado para realizar una reserva');
   }
 }
