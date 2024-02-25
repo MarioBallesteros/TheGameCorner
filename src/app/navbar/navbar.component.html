@@ -12,7 +12,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark">
   <span class="fas fa-dice"></span>
-  <a class="navbar-brand" href="#">Board Game Café</a>
+  <a class="navbar-brand" href="#">The Game Corner</a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -24,7 +24,6 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/juegos">Todos los Juegos</a>
       </li>
-      <!-- Botón Mis Reservas visible solo si el usuario está logueado -->
       <li class="nav-item" *ngIf="userName">
         <a class="nav-link" routerLink="/reservas">Mis Reservas</a>
       </li>
@@ -34,7 +33,6 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
     </form>
     <ng-container *ngIf="userName; else loginRegisterLinks">
-      <!-- Icono de usuario como botón para mostrar la información -->
       <button (click)="mostrarInfoUsuario()" class="btn btn-secondary">
         <i class="fas fa-user"></i>
       </button>
@@ -49,12 +47,10 @@
   </div>
 </nav>
 <br>
-<!-- Superposición con la información del usuario -->
 <div class="user-info-overlay" *ngIf="boolMostrarInfoUsuario">
   <div class="user-info-modal">
     <h5>Información del Usuario</h5>
     <p>Nombre de usuario: {{ userName }}</p>
-    <!-- Agrega más información del usuario aquí -->
     <button (click)="mostrarInfoUsuario()" class="btn btn-primary">Cerrar</button>
   </div>
 </div>

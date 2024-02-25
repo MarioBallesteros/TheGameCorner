@@ -9,7 +9,7 @@ import {AuthService} from "../service/auth.service";
   styleUrls: ['./detalles-juego.component.css']
 })
 export class DetallesJuegoComponent implements OnInit {
-  juego: any; // Considera definir una interfaz más específica
+  juego: any;
   estaLogeado: boolean = false;
   constructor(
     private route: ActivatedRoute,

@@ -1,4 +1,4 @@
-<!-- efecto retro -->
+<!-- Efecto retro -->
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <!-- Bootstrap CDN Link -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -11,24 +11,24 @@
 <div class="container retro-form">
   <div class="row justify-content-center">
     <div class="col-lg-6">
-      <h2 class="text-center">Create your account</h2>
+      <h2 class="text-center">Crea tu cuenta</h2>
       <form (ngSubmit)="register(registerForm)" #registerForm="ngForm">
         <div class="form-group">
-          <input name="username" ngModel type="text" class="form-control" placeholder="Enter your username:" required>
-          <small id="usernameHelp" class="form-text text-muted">Choose a unique username</small>
+          <input name="username" ngModel type="text" class="form-control" placeholder="Ingresa tu nombre de usuario:" required>
+          <small id="usernameHelp" class="form-text text-muted">Elige un nombre de usuario único</small>
         </div>
         <div class="form-group">
-          <input name="email" ngModel type="email" class="form-control" placeholder="Enter your email:" required>
-          <small id="emailHelp" class="form-text text-muted">Your email will be used for login</small>
+          <input name="email" ngModel type="email" class="form-control" placeholder="Ingresa tu correo electrónico:" required>
+          <small id="emailHelp" class="form-text text-muted">Tu correo electrónico se utilizará para iniciar sesión</small>
         </div>
         <div class="form-group">
-          <input name="password" ngModel type="password" class="form-control" placeholder="Enter password" required>
+          <input name="password" ngModel type="password" class="form-control" placeholder="Ingresa tu contraseña" required>
         </div>
         <div class="form-group">
-          <input name="confirmPassword" ngModel type="password" class="form-control" placeholder="Confirm password" required>
+          <input name="confirmPassword" ngModel type="password" class="form-control" placeholder="Confirma tu contraseña" required>
         </div>
-        <p>Already have an account?
-          <a routerLink="/index/login">Sign-In</a>
+        <p>¿Ya tienes una cuenta?
+          <a routerLink="/index/login">Inicia sesión</a>
         </p>
         <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary btn-block">Registrarse</button>
         <div class="mb-3 text-center">

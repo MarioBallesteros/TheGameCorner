@@ -1,12 +1,10 @@
-/* Google Font CDN Link for Retro Effect */
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-/* GLOBAL CSS STARTS */
 body {
   overflow-x: hidden;
   font-family: 'Press Start 2P', cursive !important;
-  background-color: #000000; /* Adding a dark background for a retro feel */
-  color: #FFFFFF; /* Ensuring text is white for readability */
+  background-color: #000000;
+  color: #FFFFFF;
 }
 
 .req {
@@ -57,7 +55,6 @@ body {
   font-weight: 600;
 }
 
-/* Custom Scroll bar for Retro Look */
 ::-webkit-scrollbar {
   width: 9px;
 }
@@ -81,9 +78,8 @@ body {
   box-shadow: 0 0 1rem rgba(57, 255, 20, 1) !important;
 }
 
-/* Adjusting Navbar for Retro Style */
 .navbar {
-  background: rgba(0, 0, 0, 0.75); /* Dark background with slight transparency */
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
@@ -93,17 +89,15 @@ body {
   color: whitesmoke;
 }
 
-/* Adjusting Cards for Retro Style */
 .card {
-  background-color: #222222; /* Dark background for cards */
-  color: whitesmoke; /* Light text color for readability */
-  border: 1px solid #FF007F; /* Pink border for a retro vibe */
+  background-color: #222222;
+  color: whitesmoke;
+  border: 1px solid #FF007F;
 }
 
-/* Modal and Form Adjustments for Retro Style */
 .modal-content {
-  background-color: #000000; /* Dark background for modals */
-  color: whitesmoke; /* Light text for contrast */
+  background-color: #000000;
+  color: whitesmoke;
 }
 
 .form-control {
@@ -116,9 +110,8 @@ body {
   box-shadow: 0 0 0 0.25rem rgba(57, 255, 20, 0.25);
 }
 
-/* Footer Adjustments for Retro Style */
 footer {
-  background-color: #222222; /* Dark background for the footer */
+  background-color: #222222;
   color: whitesmoke;
 }
 
@@ -130,4 +123,14 @@ footer a:hover {
   color: #FF007F;
 }
 
-/* Responsive and Additional Styles as needed */
+.card-img-top {
+  max-width: 80vw;
+  min-width: 10vw;
+  max-height: 20vw;
+  min-height: 20vw;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+

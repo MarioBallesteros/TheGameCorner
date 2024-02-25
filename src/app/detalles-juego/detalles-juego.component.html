@@ -11,13 +11,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <div class="container mt-5">
-  <div class="row">
-    <div class="col-lg-12">
-      <!-- Tarjeta para Detalles del Juego -->
-      <div class="card mb-3">
-        <!-- Asume que 'juego' es el objeto del juego actual en el componente de detalles -->
-        <img src="{{juego.imageUrl}}" class="card-img-top" alt="Imagen del juego">
-        <div class="card-body text-center">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-lg-6">
+      <div class="card mb-3 text-center">
+        <img src="{{juego.imageUrl}}" class="card-img-top custom-img" alt="Imagen del juego">
+        <div class="card-body">
           <h5 class="card-title">{{juego.name}}</h5>
           <p class="card-text">{{juego.description}}</p>
           <button (click)="estaLogeado ? reserveGame(juego.id) : mostrarMensajeLogin()" class="btn btn-primary">
@@ -29,3 +27,5 @@
     </div>
   </div>
 </div>
+
+
